@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="235.98" height="237.89"><svg id="SvgjsSvg1001" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.98 237.89">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3aaa35;
+        stroke: #3aaa35;
+        stroke-miterlimit: 10;
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="100.63 60.05 127.74 114.98 188.36 123.79 144.49 166.55 154.85 226.93 100.63 198.42 46.4 226.93 56.76 166.55 12.89 123.79 73.51 114.98 100.63 60.05"></polygon>
+  <polygon class="cls-1" points="181.28 13.56 194.2 39.74 223.09 43.93 202.18 64.31 207.12 93.08 181.28 79.5 155.44 93.08 160.37 64.31 139.47 43.93 168.36 39.74 181.28 13.56"></polygon>
+  <polygon class="cls-1" points="48.89 13.56 55.35 26.65 69.8 28.75 59.34 38.93 61.81 53.32 48.89 46.53 35.97 53.32 38.44 38.93 27.99 28.75 42.43 26.65 48.89 13.56"></polygon>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
