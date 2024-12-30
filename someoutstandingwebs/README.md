@@ -6,7 +6,7 @@
 <br/>
 
 ## Marcación
-- Marcación no semántica, sólo párrafos con brs dentro del body
+- Marcación no totalmente semántica, listado dentro de una única section 
 - Enlaces en el footer no activos
 - Espacios en rutas a archivos
 
