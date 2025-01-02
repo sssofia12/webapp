@@ -1,76 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Simple CSS Grid Layout</title>
-
-        <link rel="stylesheet" href="./css/index.css" />
-
-    </head>
-
-    <body>
-        <!-- Header -->
-        <!-- Recommended semantic nav
-              https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
-        -->
-        <header>
-            <nav class="navbar">
-                <a href="#" class="nav-icon">
-                    <img src="assets/icons/scroll_triangle_down_dark.svg" alt="Logo">
-                </a>
-                <input class="nav-menu-btn" type="checkbox" id="nav-menu-btn" />
-                <label class="nav-menu" for="nav-menu-btn">
-                    <span class="nav-menu-icon" />
-                </label>
-                <ul class="nav-items">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Main Content Area with Grid Layout -->
-        <main>
-            <div class="fluid-grid-container">
-                <div class="grid-item">
-                    <h2>Grid Item 1</h2>
-                    <p>This is the content for the first grid item.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>Grid Item 2</h2>
-                    <p>This is the content for the second grid item.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>Grid Item 3</h2>
-                    <p>This is the content for the third grid item.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>Grid Item 4</h2>
-                    <p>This is the content for the fourth grid item.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>Grid Item 5</h2>
-                    <p>This is the content for the fiveth grid item.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>Grid Item 6</h2>
-                    <p>This is the content for the sixth grid item.</p>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNM Visuals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SNMVISUALS</div>
+        <nav>
+            <a href="#">Work</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>SNMVISUALS</h1>
+            <p class="subtext">Hola</p>
+        </section>
+        <section class="welcome">
+            <p>Hi! I'm Sofia, welcome!</p>
+            <p>
+                I combine my eye for detail as a Professional Designer with features
+                of UX/UI. I work to create products that are both functional and
+                beautiful, driven by a strong design process. Check out some of my
+                work below!
+            </p>
+            <div class="flowers">
+                <img src="flower-left.png" alt="Flower Left">
+                <img src="flower-right.png" alt="Flower Right">
             </div>
-        </main>
-        <!-- Footer with Grid Layout -->
-        <footer>
-            <div>Contact Us</div>
-            <div>Privacy Policy</div>
-            <div>Follow Us</div>
-        </footer>
-        <!--Javascript-->
-        <script src="./js/script.js" type="text/javascript"></script>
-        <!-- Google analytics -->
-    </body>
-
-</html>c:\Users\snmvi\OneDrive\Documentos\GitHub\web-fundamentals\css\base.css c:\Users\snmvi\OneDrive\Documentos\GitHub\web-fundamentals\css\grids.css c:\Users\snmvi\OneDrive\Documentos\GitHub\web-fundamentals\css\index.css c:\Users\snmvi\OneDrive\Documentos\GitHub\web-fundamentals\css\media-queries.css c:\Users\snmvi\OneDrive\Documentos\GitHub\web-fundamentals\css\nav.css c:\Users\snmvi\OneDrive\Documentos\GitHub\web-fundamentals\css\theme.css
+        </section>
+        <section class="portfolio">
+            <div class="category">
+                <h2>Branding</h2>
+                <p>KAI Ice-colours Kanso</p>
+            </div>
+            <div class="category">
+                <h2>Digital</h2>
+                <p>Le Soleil</p>
+            </div>
+            <div class="category">
+                <h2>Graphic Design</h2>
+                <p>Tales of the Ocean Vinyl Redesign</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Thanks for your visit!</p>
+        <div class="contact">
+            <p>Email: snmvisuals@gmail.com</p>
+            <p>Instagram: @snmvisuals</p>
+        </div>
+    </footer>
+</body>
+</html>
