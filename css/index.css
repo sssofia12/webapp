@@ -1,2 +1,58 @@
-@import "media-queries.css";
-@import "base.css";
+/* Portfolio Section */
+.portfolio {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+.portfolio .category {
+    text-align: center;
+    border: 1px solid #878787;
+    padding: 1.5rem;
+    width: 200px;
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+    text-decoration: none; /* Para los enlaces */
+    position: relative;
+    transition: all 0.3s ease-in-out; /* Suaviza el efecto */
+}
+
+.portfolio .category:hover {
+    background-color: #FF5722; /* Fondo anaranjado */
+    color: #FFFFFF; /* Texto blanco */
+    border-color: #FF5722;
+}
+
+.portfolio .category:hover .hover-text {
+    opacity: 1; /* Mostrar texto adicional */
+}
+
+.portfolio h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: inherit; /* Adapta el color al hover */
+}
+
+.portfolio p {
+    font-size: 1rem;
+    color: inherit; /* Adapta el color al hover */
+}
+
+/* Texto que aparece al hacer hover */
+.hover-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FF5722; /* Fondo del hover-text */
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out;
+}
+
