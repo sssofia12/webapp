@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vynil Redesign</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilo para el título y descripción */
+        .title-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .title-container h1 {
+            font-size: 36px;
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+        }
+
+        .title-container p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Imagen de ancho completo */
+        .full-width-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Carrusel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Abarca toda la pantalla */
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        /* Estilo para los botones del carrusel */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent; /* Sin fondo */
+            color: white; /* Flecha blanca */
+            border: none;
+            font-size: 36px; /* Tamaño de la flecha */
+            padding: 0; /* Sin padding */
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-btn.next {
+            right: 20px;
+        }
+
+        .carousel-btn:hover {
+            color: #f0f0f0; /* Color de la flecha en hover */
+        }
+
+        .carousel-btn:focus {
+            outline: none; /* Remover outline al hacer foco */
+        }
+
+        /* Estilo para imágenes y video de ancho completo */
+        .full-screen-section img,
+        .full-screen-section video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        /* Estilos para el menú desplegable */
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            padding: 10px;
+        }
+
+        .dropdown a {
+            color: rgb(23, 23, 23);
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .dropdown a:hover {
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <!-- Logo como imagen -->
+        <a href="index.html" class="logo">
+            <img src="assets/images/logoweb.png" class="logo-img">
+        </a>
+        <nav>
+            <!-- Enlace a Work que activa el menú desplegable -->
+            <a href="#" id="work-link">Work</a>
+            <!-- Menú desplegable -->
+            <div class="dropdown" id="work-dropdown">
+                <a href="branding.html">Branding</a>
+                <a href="digital.html">Digital</a>
+                <a href="graphic-design.html">Graphic Design</a>
+            </div>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Aquí iría el contenido de la página -->
+
+    <!-- Contenedor del título y descripción -->
+    <div class="title-container">
+        <h1>Vynil Redesign</h1>
+        <p>Redesign of the vinyl of the latest Tame Impala album.</p>
+    </div>
+
+    <!-- Imagen de ancho completo -->
+    <div class="full-width-image">
+        <img src="assets/images/vynil1.png" alt="Imagen principal de KAI">
+    </div>
+
+
+    <!-- Imagen adicional 1 de ancho completo -->
+    <div class="full-screen-section">
+        <img src="assets/images/vynil2.png" alt="Imagen adicional 1 de KAI">
+    </div>
+
+   
+
+    <!-- Script para el carrusel -->
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1; // Ir al último si estás en el primero
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0; // Ir al primero si estás en el último
+            }
+            const offset = -currentIndex * 100; // Mover el carrusel
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Código para el menú desplegable
+        document.getElementById('work-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado
+            const dropdown = document.getElementById('work-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block'; // Alternar la visibilidad
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2025 snmvisuals.Todos los derechos reservados .</p>
+            </div>
+            <div class="footer-right">
+                <nav>
+                    <a href="#privacy-policy">Política de privacidad</a>
+                    <a href="#terms-of-service">Términos de servicio</a>
+                    <a href="#contact">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
