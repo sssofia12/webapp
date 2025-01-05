@@ -14,4 +14,14 @@ document.addEventListener('click', (e) => {
         workDropdown.classList.remove('show-dropdown'); // Ocultamos el menú si clicamos fuera
     }
 });
-
+document.getElementById('work-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+    var dropdown = this.nextElementSibling; // Obtener el menú desplegable (dropdown)
+    
+    // Alternar la clase 'show-dropdown' para mostrar/ocultar el menú
+    dropdown.classList.toggle('show-dropdown');
+});
+function toggleMenu() {
+    const menu = document.querySelector('header nav');
+    menu.classList.toggle('show-menu');
+}

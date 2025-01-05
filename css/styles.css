@@ -72,7 +72,7 @@ header nav #work-link:hover {
 .show-dropdown {
     display: block;
 }
-
+/*Cierro header*/
 /* Sección Video */
 .video-section {
     width: 100%;
@@ -227,22 +227,6 @@ header nav #work-link:hover {
     padding: 40px 20px;
 }
 
-.digital-section img {
-    width: 120%; /* Aumenta el tamaño de la imagen al 120% del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-    transition: transform 0.3s ease; /* Añade transición suave */
-}
-
-
-/* Asegúrate de incluir la clase del contenedor de la imagen en la sección */
-.digital-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-    font-family: "Helvetica Neue", sans-serif;
-}
-
 .branding-section h1,
 .digital-section h1,
 graphic-design-section h1 {
@@ -267,7 +251,6 @@ graphic-design-section li {
     color: #555;
     font-family: "Helvetica Neue", sans-serif;
 }
-
 
 /* Asegura que las cajas de las secciones no afecten el layout general */
 .box-container {
