@@ -3,17 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>SNMVISUALS</title>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Agregar el favicon desde GitHub -->
-    <link rel="icon" href="https://github.com/sssofia12/webapp/raw/master/assets/icons/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://raw.githubusercontent.com/sssofia12/webapp/refs/heads/master/assets/icons/favicons/favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Aquí se agregan las reglas de diseño responsivo */
+
+        /* Estilo general, se adapta al 100% del ancho */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sección Video */
+        .video-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Sección de Introducción */
+        .intro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .intro-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+        }
+
+        .intro-text {
+            max-width: 600px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Sección de Cuadrículas */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .grid-item {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        /* Media Queries para hacerlo responsivo */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+            }
+
+            .intro-container {
+                flex-direction: column; /* Alinear las imágenes y texto en columna */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+            }
+
+            .intro-container {
+                flex-direction: column;
+            }
+
+            .intro-image {
+                max-width: 100%;
+            }
+        }
+
+        /* --- Estilo para el menú desplegable --- */
+        .dropdown {
+            display: none; /* Ocultamos el dropdown por defecto */
+            position: absolute;
+            top: 100%; /* Lo posicionamos debajo de "Work" */
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 160px; /* Ajustamos el ancho del menú */
+            z-index: 1;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Estilo al pasar el mouse sobre el enlace "Work" */
+        header nav #work-link:hover {
+            cursor: pointer;
+        }
+
+        /* Estilo al mostrar el menú */
+        .show-dropdown {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
         <!-- Logo como imagen -->
         <a href="index.html" class="logo">
-            <img src="assets/images/logoweb.png" class="logo-img">
+            <img src="assets/images/logoweb.png" class="logo-img" alt="Logo">
         </a>
         <nav>
             <!-- Enlace a Work que activa el menú desplegable -->
@@ -29,68 +156,75 @@
         </nav>
     </header>
 
-    <!-- Aquí iría el contenido de la página -->
+    <!-- Script para controlar el comportamiento del menú desplegable -->
+    <script>
+        // Función para mostrar el submenú al hacer clic en "Work"
+        document.querySelector('#work-link').addEventListener('click', function() {
+            const dropdown = document.querySelector('#work-dropdown');
+            dropdown.classList.toggle('show-dropdown');
+        });
+    </script>
+
+    <!-- Aquí irían el contenido de la página (por ejemplo, la sección de contacto, etc.) -->
+
+    <!-- Sección Video -->
+    <section class="video-section">
+        <video autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Sección de Introducción -->
+    <section class="intro">
+        <div class="intro-container">
+            <img src="assets/images/flores.png" class="intro-image">
+            <div class="intro-text">
+                <h2 class="text-hola">Hi, I'm Sofia, welcome!</h2>
+                <p>
+                    I’m a final year student of Audiovisual Design and Illustration at UDIT.<br>
+                    I combine my skills in graphic design and my knowledge in illustration to bring fresh ideas and unique perspectives to each project. I work from the search for solid concepts and creative research, always with the aim of enriching my proposals with visual narrative and authenticity.
+                </p>
+            </div>
+            <img src="assets/images/flores.png" class="intro-image">
+        </div>
+    </section>
+
+    <!-- Sección de Cuadrículas -->
+    <section class="grid-section">
+        <div class="grid-container">
+            <a href="branding.html" class="grid-item">
+                <div class="title">Branding</div>
+                <div class="subtitle">KAI<br>Ice-Colores<br>Kanso</div>
+            </a>
+            <a href="digital.html" class="grid-item">
+                <div class="title">Digital</div>
+                <div class="subtitle">Le Soleil</div>
+            </a>
+            <a href="graphic-design.html" class="grid-item">
+                <div class="title">Graphic Design</div>
+                <div class="subtitle">Tales of the Ocean<br>Vinyl Redesign</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2025 snmvisuals. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-right">
+                <nav>
+                    <a href="#privacy-policy">Política de privacidad</a>
+                    <a href="#terms-of-service">Términos de servicio</a>
+                    <a href="#contact">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
 
     <!-- Script para controlar el comportamiento del menú desplegable -->
-    <script src="java script.js/app.js"></script>
-</body>
-</html>
-
-<!-- Sección Video -->
-<section class="video-section">
-    <video autoplay muted loop>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</section>
-
-<!-- Sección de Introducción -->
-<section class="intro">
-    <div class="intro-container">
-        <img src="assets/images/flores.png" class="intro-image">
-        <div class="intro-text">
-            <h2 class="text-hola">Hi, I'm Sofia, welcome!</h2>
-            <p>
-                I’m a final year student of Audiovisual Design and Illustration at UDIT.<br>
-                I combine my skills in graphic design and my knowledge in illustration to bring fresh ideas and unique perspectives to each project. I work from the search for solid concepts and creative research, always with the aim of enriching my proposals with visual narrative and authenticity.
-            </p>
-        </div>
-        <img src="assets/images/flores.png" class="intro-image">
-    </div>
-</section>
-
-<!-- Sección de Cuadrículas -->
-<section class="grid-section">
-    <div class="grid-container">
-        <a href="branding.html" class="grid-item">
-            <div class="title">Branding</div>
-            <div class="subtitle">KAI<br>Ice-Colores<br>Kanso</div>
-        </a>
-        <a href="digital.html" class="grid-item">
-            <div class="title">Digital</div>
-            <div class="subtitle">Le Soleil</div>
-        </a>
-        <a href="graphic-design.html" class="grid-item">
-            <div class="title">Graphic Design</div>
-            <div class="subtitle">Tales of the Ocean<br>Vinyl Redesign</div>
-        </a>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-left">
-            <p>&copy; 2025 snmvisuals. Todos los derechos reservados.</p>
-        </div>
-        <div class="footer-right">
-            <nav>
-                <a href="#privacy-policy">Política de privacidad</a>
-                <a href="#terms-of-service">Términos de servicio</a>
-                <a href="#contact">Contacto</a>
-            </nav>
-        </div>
-    </div>
-</footer>
+    <script src="javascript/app.js"></script> <!-- Corregí la ruta del archivo JS -->
 </body>
 </html>

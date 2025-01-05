@@ -1,81 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Asegurar que la imagen abarque toda la página */
-        .branding-gallery {
-            position: relative;
-            width: 100vw; /* Ocupa el 100% del ancho del viewport */
-            height: 100vh; /* Ocupa el 100% de la altura del viewport */
-            display: flex;
-            justify-content: center; /* Centrado horizontal */
-            align-items: center; /* Centrado vertical */
-            overflow: hidden; /* Elimina desbordes */
-        }
-
-        .branding-gallery img {
-            width: 100%; /* Escala para ocupar todo el ancho */
-            height: 100%; /* Escala para ocupar toda la altura */
-            object-fit: cover; /* Ajusta sin distorsionar la imagen */
-        }
-    </style>
-</head>
-<body>
-    <!-- Encabezado -->
-    <header>
-        <!-- Logo como imagen -->
-        <a href="index.html" class="logo">
-            <img src="assets/images/logoweb.png" class="logo-img">
-        </a>
-        <nav>
-            <!-- Enlace a Work que activa el menú desplegable -->
-            <a href="#" id="work-link">Work</a>
-            <!-- Menú desplegable -->
-            <div class="dropdown" id="work-dropdown">
-                <a href="branding.html">Branding</a>
-                <a href="digital.html">Digital</a>
-                <a href="graphic-design.html">Graphic Design</a>
-            </div>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Título Branding -->
-    <section class="branding-title">
-        <h1>Digital</h1>
-    </section>
-   
-    <!-- Galería de imágenes -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SNMVISUALS</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Agregar el favicon desde GitHub -->
+        <link rel="icon" href="https://raw.githubusercontent.com/sssofia12/webapp/refs/heads/master/assets/icons/favicons/favicon.ico" type="image/x-icon">
+    
+    </head>
+    <body>
+        <!-- Encabezado -->
+        <header>
+            <!-- Logo como imagen -->
+            <a href="index.html" class="logo">
+                <img src="assets/images/logoweb.png" class="logo-img">
+            </a>
+            <nav>
+                <!-- Enlace a Work que activa el menú desplegable -->
+                <a href="#" id="work-link">Work</a>
+                <!-- Menú desplegable -->
+                <div class="dropdown" id="work-dropdown">
+                    <a href="branding.html">Branding</a>
+                    <a href="digital.html">Digital</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        </html>
+        <!-- Título Branding -->
+        <section class="branding-title">
+            <h1>Digital</h1>
+        </section>
+       <!-- Galería de imágenes -->
     <section class="branding-gallery">
-        <!-- Imagen ajustada al tamaño de la página -->
+        <!-- Primera imagen con enlace a kai.html -->
+        <div class="gallery-image-container">
+            <a href="thebear.html">
+                <img src="assets/images/the bear.png" alt="Imagen Branding 1">
+                <div class="gallery-image-overlay"></div>
+                <div class="gallery-image-text"></div>
+            </a>
+        </div>
+
+        <!-- Segunda imagen con enlace a ice-colors.html -->
         <div class="gallery-image-container">
             <a href="lesoleil.html">
-                <img src="assets/images/lesoleilportada.png" alt="Lesoleil">
+                <img src="assets/images/lesoleilportad.png" alt="Imagen Branding 2">
+                <div class="gallery-image-overlay"></div>
+                <div class="gallery-image-text"></div>
+            </a>
+        </div>
+
+        <!-- Tercera imagen con enlace a kanso.html -->
+        <div class="gallery-image-container">
+            <a href="thecar.html">
+                <img src="assets/images/the car.png" alt="Imagen Branding 3">
+                <div class="gallery-image-overlay"></div>
+                <div class="gallery-image-text"></div>
             </a>
         </div>
     </section>
 
-     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-right">
+                    <nav>
+                        <a href="#privacy-policy">Política de privacidad</a>
+                        <a href="#terms-of-service">Términos de servicio</a>
+                        <a href="#contact">Contacto</a>
+                    </nav>
+                </div>
             </div>
-            <div class="footer-right">
-                <nav>
-                    <a href="#privacy-policy">Política de privacidad</a>
-                    <a href="#terms-of-service">Términos de servicio</a>
-                    <a href="#contact">Contacto</a>
-                </nav>
-            </div>
-        </div>
-    </footer>
-    <!-- Script para controlar el comportamiento del menú desplegable -->
-    <script src="java script.js/app.js"></script>
-</body>
+        </footer>
+
+        <!-- Script para controlar el comportamiento del menú desplegable -->
+        <script src="java script.js/app.js"></script>
+    </body>
 </html>

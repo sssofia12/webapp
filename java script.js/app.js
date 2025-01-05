@@ -1,27 +1,19 @@
-// Obtenemos el enlace de "Work" y el menú desplegable
+console.log("JavaScript cargado correctamente en About");
+// Obtener el enlace "Work" y el menú desplegable
 const workLink = document.getElementById('work-link');
 const workDropdown = document.getElementById('work-dropdown');
 
-// Añadimos un evento para mostrar u ocultar el menú al hacer clic
+// Añadir un evento para mostrar u ocultar el menú al hacer clic en "Work"
 workLink.addEventListener('click', (e) => {
     e.preventDefault(); // Evitamos que el enlace se siga
-    workDropdown.classList.toggle('show-dropdown'); // Mostramos o escondemos el menú
+    // Toggle de la clase para mostrar/ocultar el dropdown
+    workDropdown.classList.toggle('show-dropdown');
 });
 
 // Si haces clic fuera del menú, lo cerramos
 document.addEventListener('click', (e) => {
+    // Verificamos si el clic es fuera del enlace y el dropdown
     if (!workLink.contains(e.target) && !workDropdown.contains(e.target)) {
-        workDropdown.classList.remove('show-dropdown'); // Ocultamos el menú si clicamos fuera
+        workDropdown.classList.remove('show-dropdown'); // Lo ocultamos
     }
 });
-document.getElementById('work-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevenir el comportamiento por defecto del enlace
-    var dropdown = this.nextElementSibling; // Obtener el menú desplegable (dropdown)
-    
-    // Alternar la clase 'show-dropdown' para mostrar/ocultar el menú
-    dropdown.classList.toggle('show-dropdown');
-});
-function toggleMenu() {
-    const menu = document.querySelector('header nav');
-    menu.classList.toggle('show-menu');
-}

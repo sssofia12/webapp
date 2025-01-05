@@ -72,7 +72,7 @@ header nav #work-link:hover {
 .show-dropdown {
     display: block;
 }
-/*Cierro header*/
+
 /* Sección Video */
 .video-section {
     width: 100%;
@@ -160,19 +160,24 @@ header nav #work-link:hover {
 }
 
 /* Estilo para el contenedor de introducción */
+/* Establecer el contenedor para que pueda expandirse */
 .intro-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 40px 20px;
     font-family: "Helvetica Neue", sans-serif;
+    width: 100%; /* Asegúrate de que ocupe el ancho completo disponible */
+    height: auto; /* Permite que el contenedor se ajuste a la altura de su contenido */
 }
 
+/* Establecer la imagen para que ocupe más espacio */
 .intro-image {
-    width: 300px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 20px;
+    width: 100%; /* Asegura que ocupe el 100% del contenedor */
+    max-width: 1200px; /* Establece un tamaño máximo (ajústalo según el diseño) */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
+    margin: 0 20px; /* Mantiene el margen */
 }
 
 .intro-text {
@@ -220,6 +225,7 @@ header nav #work-link:hover {
 }
 
 /* Sección específica para Branding, Digital y Graphic Design */
+
 .branding-section,
 .digital-section,
 .graphic-design-section {

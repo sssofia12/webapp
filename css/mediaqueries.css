@@ -1,8 +1,6 @@
 /* Importación del archivo principal */
 @import "styles.css"; /* Asegúrate de que el archivo "styles.css" esté en la misma carpeta */
 
-/*ENCABEZADO*/
-
 /* --- Estilos para pantallas grandes (por ejemplo, escritorio) --- */
 @media (min-width: 1200px) {
     .grid-container {
@@ -21,6 +19,11 @@
 
     .contact-content {
         gap: 50px;
+    }
+
+    /* Mostrar los enlaces en escritorio */
+    header nav ul {
+        display: flex; /* Asegura que el menú esté visible en pantallas grandes */
     }
 }
 
@@ -44,68 +47,9 @@
         gap: 30px;
     }
 
-    .intro-container {
-        flex-direction: column; /* Columnas en lugar de filas */
-    }
-
-    .contact-form {
-        max-width: 100%;
-    }
-}
-
-/* --- Estilos para pantallas pequeñas (por ejemplo, móviles) --- */
-@media (max-width: 767px) {
-    body {
-        padding: 10px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-    }
-
-    header nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr; /* Una sola columna */
-    }
-
-    .grid-item {
-        max-width: 100%;
-        margin: 0 0 20px 0;
-        height: auto;
-    }
-
-    .intro h2 {
-        font-size: 1.8rem;
-    }
-
-    .intro p {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    .contact-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 1rem;
-    }
-
-    .contact-form button {
-        width: 100%; /* Botón de ancho completo */
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
+    /* Menú desplegable */
+    header nav .dropdown {
+        display: none; /* Ocultar el dropdown en pantallas medianas */
     }
 }
 
@@ -156,6 +100,11 @@
     .footer-container ul li {
         text-align: center;
     }
+
+    /* Ocultar imagen en la sección "About" en móviles */
+    .about-image {
+        display: none; /* Oculta la imagen */
+    }
 }
 
 /* --- Estilos para pantallas de tabletas en modo paisaje --- */
@@ -178,6 +127,10 @@
         flex-direction: row; /* Flexbox horizontal para los formularios */
         gap: 40px;
     }
+
+    .contact-left img {
+        display: none; /* Ocultar imagen */
+    }
 }
 
 /* --- Estilos para dispositivos con pantallas muy grandes --- */
@@ -196,6 +149,19 @@
         font-size: 3rem;
     }
 }
+
+/* MENÚ DESPLEGABLE */
+
+/* Menú desplegable oculto por defecto */
+#work-dropdown {
+    display: none; /* Lo dejamos oculto por defecto */
+}
+
+/* Clase para mostrar el menú desplegable */
+.show-dropdown {
+    display: block; /* Mostramos el menú cuando se añade esta clase */
+}
+
 /* Estilo para el menú desplegable */
 .dropdown {
     display: none; /* Ocultamos el dropdown por defecto */
@@ -221,66 +187,11 @@
 }
 
 /* Estilo al pasar el mouse sobre el enlace "Work" */
-header nav #work-link:hover {
+header nav #work-link {
     cursor: pointer;
 }
 
-/* Estilo al mostrar el menú */
-.show-dropdown {
-    display: block;
-}
-
 /* --- Responsividad --- */
-
-/* Para pantallas pequeñas (dispositivos móviles) */
-@media (max-width: 767px) {
-    /* Menú de navegación: ocultar por defecto */
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff;
-        position: absolute;
-        top: 60px; /* Ajusta esto dependiendo de la altura del header */
-        left: 0;
-        z-index: 1;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Estilo del icono del menú */
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    /* Cuando el menú está visible (toggle del icono de menú) */
-    header nav.show-menu ul {
-        display: flex;
-    }
-
-    /* Menú desplegable en pantallas móviles */
-    .dropdown {
-        position: static; /* Lo hacemos estático para que se ajuste dentro del flujo normal */
-        min-width: 100%; /* Aseguramos que ocupe todo el ancho del menú */
-        box-shadow: none;
-    }
-
-    .dropdown a {
-        padding: 15px;
-    }
-
-    /* Mostrar el menú de "Work" cuando se hace clic */
-    header nav #work-link.show-dropdown {
-        background-color: #f1f1f1;
-    }
-
-    /* Opcional: Cambiar el color de fondo del menú cuando está abierto */
-    .show-dropdown {
-        background-color: #f1f1f1;
-    }
-}
-
 /* Para pantallas medianas y grandes (pantallas de tabletas en modo paisaje y escritorio) */
 @media (min-width: 768px) {
     header nav ul {
@@ -290,9 +201,9 @@ header nav #work-link:hover {
         position: relative;
     }
 
-    /* Menú desplegable al pasar el ratón sobre el enlace "Work" */
-    header nav #work-link:hover + .dropdown {
-        display: block;
+    /* Menú desplegable al hacer clic en el enlace "Work" */
+    header nav #work-link {
+        cursor: pointer;
     }
 
     /* Icono de menú: no visible en pantallas grandes */
@@ -301,421 +212,11 @@ header nav #work-link:hover {
     }
 }
 
-/*CIERRO ENCABEZADO*/
-/*BODY LANDING*/
-/* Sección Video */
-.video-section {
-    width: 100%;
-    height: 50vh; /* En pantallas grandes, altura de 50vh */
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Asegura que el video no se desborde */
-}
+/* --- Sección "About" --- */
 
-.video-section video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Media Query para pantallas más pequeñas (móviles y tabletas) */
+/* Ocultar la imagen en la sección "About" en pantallas de móviles */
 @media (max-width: 768px) {
-    .video-section {
-        height: 40vh; /* Ajustar la altura en pantallas medianas y móviles */
+    .about-image {
+        display: none !important; /* Aseguramos que la imagen se oculte */
     }
 }
-
-@media (max-width: 480px) {
-    .video-section {
-        height: 30vh; /* Aumentar más la altura en pantallas pequeñas */
-    }
-}
-/* Estilos para la sección de introducción */
-.intro {
-    text-align: center;
-    margin-top: 30px;
-    padding: 0 20px;
-}
-
-.intro h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: normal;
-    color: #333;
-    font-family: "Helvetica Neue", sans-serif;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: "Helvetica Neue", sans-serif;
-}
-
-/* Media Queries para hacerlo responsivo */
-
-@media (max-width: 768px) {
-    .intro h2 {
-        font-size: 1.8rem; /* Reducir el tamaño del título en pantallas medianas */
-    }
-
-    .intro p {
-        font-size: 1rem; /* Ajustar el tamaño del texto en pantallas medianas */
-        padding: 0 15px; /* Reducir el padding en pantallas medianas */
-    }
-}
-
-@media (max-width: 480px) {
-    .intro h2 {
-        font-size: 1.6rem; /* Reducir aún más el tamaño del título en pantallas pequeñas */
-    }
-
-    .intro p {
-        font-size: 0.9rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
-        padding: 0 10px; /* Ajustar el padding en pantallas pequeñas */
-    }
-}
-@media screen and (max-width: 1024px) {
-    /* Para dispositivos de tamaño intermedio (tabletas) */
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    }
-
-    .grid-item {
-        width: 100%; /* Las cajas ocupan el 100% del ancho disponible */
-        height: auto; /* La altura se ajusta automáticamente */
-    }
-
-    .intro-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .intro-image {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* Para dispositivos más pequeños (móviles) */
-    .grid-container {
-        grid-template-columns: 1fr; /* Una columna */
-    }
-
-    .grid-item {
-        width: 100%;
-        height: auto;
-    }
-
-    .intro-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-image {
-        width: 100%;
-    }
-
-    .text-hola {
-        font-size: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    /* Para dispositivos móviles más pequeños */
-    footer {
-        font-size: 0.8rem; /* Tamaño de texto más pequeño */
-    }
-}
-/*CIERRO BODY*/
-/*ABRO FOOTER*/
-footer .footer-container {
-    display: flex; /* Usamos flexbox para alinear los elementos */
-    justify-content: space-between; /* Espaciado entre los elementos */
-    align-items: center; /* Alineación vertical de los elementos */
-    width: 90%;
-    max-width: 1200px; /* Máxima anchura para que no se expanda demasiado */
-    margin: 0 auto; /* Centra el contenido */
-}
-
-footer .footer-left {
-    font-size: 0.8rem; /* Texto pequeño para los derechos reservados */
-}
-
-footer .footer-right {
-    display: flex;
-    gap: 15px; /* Espacio entre los enlaces */
-}
-
-footer nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: normal;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-footer nav a:hover {
-    color: #f1f1f1; /* Color más claro al pasar el ratón */
-}
-
-/* Estilo de los enlaces en el footer cuando están activos o al pasar el ratón */
-footer nav a:active, footer nav a:focus {
-    color: #f1f1f1;
-}
-
-/* Media Query para dispositivos con pantallas más pequeñas (Tabletas) */
-@media screen and (max-width: 1024px) {
-    footer .footer-container {
-        flex-direction: column; /* Coloca los elementos en columna */
-        align-items: center; /* Centra los elementos */
-    }
-
-    footer .footer-left {
-        font-size: 1rem; /* Aumenta el tamaño de la fuente para mejor legibilidad */
-        text-align: center; /* Centra el texto */
-        margin-bottom: 10px; /* Espacio abajo */
-    }
-
-    footer .footer-right {
-        flex-direction: column; /* Coloca los enlaces en columna */
-        gap: 10px; /* Espacio más pequeño entre los enlaces */
-        text-align: center; /* Centra los enlaces */
-    }
-
-    footer nav a {
-        font-size: 1rem; /* Aumenta el tamaño de los enlaces para que sean legibles */
-    }
-}
-
-/* Media Query para dispositivos móviles más pequeños (Smartphones) */
-@media screen and (max-width: 768px) {
-    footer .footer-container {
-        flex-direction: column; /* Coloca los elementos en columna */
-        align-items: center; /* Centra los elementos */
-        padding: 20px 10px; /* Agrega espacio adicional alrededor */
-    }
-
-    footer .footer-left {
-        font-size: 1rem; /* Aumenta el tamaño de la fuente */
-        text-align: center; /* Centra el texto */
-        margin-bottom: 10px; /* Espacio abajo */
-    }
-
-    footer .footer-right {
-        flex-direction: column; /* Coloca los enlaces en columna */
-        gap: 8px; /* Espacio reducido entre los enlaces */
-        text-align: center; /* Centra los enlaces */
-    }
-
-    footer nav a {
-        font-size: 1rem; /* Aumenta el tamaño de los enlaces */
-    }
-}
-
-/* Media Query para dispositivos muy pequeños (Smartphones muy pequeños o vistas extremadamente estrechas) */
-@media screen and (max-width: 480px) {
-    footer .footer-container {
-        flex-direction: column; /* Coloca los elementos en columna */
-        align-items: center; /* Centra los elementos */
-        padding: 15px 5px; /* Más espacio alrededor */
-    }
-
-    footer .footer-left {
-        font-size: 0.9rem; /* Reduce ligeramente el tamaño de la fuente */
-        text-align: center; /* Centra el texto */
-        margin-bottom: 10px; /* Espacio abajo */
-    }
-
-    footer .footer-right {
-        flex-direction: column; /* Coloca los enlaces en columna */
-        gap: 5px; /* Espacio reducido entre los enlaces */
-        text-align: center; /* Centra los enlaces */
-    }
-
-    footer nav a {
-        font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
-    }
-}
-/*CIERRO FOOTER*/
-/*ABRO APARTADO CONTACT*/
-/* Contenedor de contacto */
-.contact-content {
-    display: flex;
-    justify-content: center; /* Centra los bloques horizontalmente */
-    align-items: flex-start; /* Alinea los bloques en la parte superior */
-    padding: 40px;
-    gap: 50px; /* Espacio entre los bloques */
-}
-
-/* Estilo para el texto (contact-info) */
-.contact-info {
-    flex: 1; /* Ocupa el espacio disponible a la izquierda */
-    text-align: left; /* Alineación del texto a la izquierda */
-    max-width: 450px; /* Limitar el ancho máximo */
-}
-
-.contact-info h1 {
-    font-size: 3rem; /* Tamaño del título */
-    font-weight: normal;
-    margin-bottom: 20px;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #333;
-}
-
-.contact-info p {
-    font-size: 1rem; /* Aumentar el tamaño del texto */
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #555;
-}
-
-/* Estilo para el formulario de contacto */
-.contact-form {
-    flex: 1; /* Ocupa el espacio disponible a la derecha */
-    text-align: left; /* Alineación del contenido del formulario a la izquierda */
-    max-width: 500px; /* Ampliar el ancho máximo */
-}
-
-.contact-form h2 {
-    font-size: 2.5rem; /* Tamaño del título "Text Me" */
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #007bff;
-}
-
-/* Estilo de las casillas de entrada */
-.contact-form input,
-.contact-form textarea {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    padding: 15px 20px; /* Espaciado interno */
-    font-size: 1.3rem; /* Tamaño del texto */
-    border: 1px solid #ddd; /* Borde sutil */
-    border-radius: 5px; /* Bordes redondeados */
-    font-family: 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
-    margin-bottom: 20px; /* Espaciado entre elementos */
-}
-
-/* Estilo del botón "Send" */
-.contact-form button {
-    padding: 15px 30px; /* Tamaño del botón */
-    font-size: 1.3rem; /* Tamaño del texto */
-    background-color: #007bff; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    border: none;
-    border-radius: 50px; /* Botón redondo */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 15px; /* Espaciado superior */
-}
-
-.contact-form button:hover {
-    background-color: #0056b3; /* Color del botón al pasar el ratón */
-}
-
-/* Estilo para el área del mensaje */
-.contact-form textarea {
-    height: 140px; /* Altura del área de texto */
-    resize: none; /* Desactiva el redimensionamiento */
-}
-
-/* Media Query para pantallas medianas (Tablet) */
-@media screen and (max-width: 1024px) {
-    .contact-content {
-        flex-direction: column; /* Apila los bloques en columna */
-        padding: 20px;
-        gap: 30px; /* Reduce el espacio entre los bloques */
-    }
-
-    .contact-info,
-    .contact-form {
-        max-width: 100%; /* Permite que los bloques ocupen todo el ancho disponible */
-    }
-
-    .contact-info h1 {
-        font-size: 2.5rem; /* Reduce el tamaño del título */
-    }
-
-    .contact-info p,
-    .contact-form h2 {
-        font-size: 1.2rem; /* Reduce el tamaño del texto */
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 1.2rem; /* Reduce el tamaño del texto en las entradas */
-    }
-
-    .contact-form button {
-        font-size: 1.2rem; /* Reduce el tamaño del texto en el botón */
-        padding: 12px 25px; /* Reduce el tamaño del botón */
-    }
-}
-
-/* Media Query para pantallas pequeñas (Smartphones) */
-@media screen and (max-width: 768px) {
-    .contact-content {
-        flex-direction: column; /* Apila los bloques en columna */
-        padding: 15px;
-        gap: 20px; /* Reduce aún más el espacio entre los bloques */
-    }
-
-    .contact-info,
-    .contact-form {
-        max-width: 100%; /* Permite que los bloques ocupen todo el ancho disponible */
-    }
-
-    .contact-info h1 {
-        font-size: 2rem; /* Reduce el tamaño del título */
-    }
-
-    .contact-info p,
-    .contact-form h2 {
-        font-size: 1.1rem; /* Reduce aún más el tamaño del texto */
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 1.1rem; /* Reduce el tamaño del texto en las entradas */
-    }
-
-    .contact-form button {
-        font-size: 1.1rem; /* Reduce el tamaño del texto en el botón */
-        padding: 10px 20px; /* Reduce el tamaño del botón */
-    }
-}
-
-/* Media Query para pantallas muy pequeñas (Smartphones pequeños) */
-@media screen and (max-width: 480px) {
-    .contact-content {
-        padding: 10px;
-        gap: 15px; /* Reduce el espacio entre los bloques */
-    }
-
-    .contact-info h1 {
-        font-size: 1.8rem; /* Reduce aún más el tamaño del título */
-    }
-
-    .contact-info p,
-    .contact-form h2 {
-        font-size: 1rem; /* Reduce el tamaño del texto */
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 1rem; /* Reduce el tamaño del texto en las entradas */
-    }
-
-    .contact-form button {
-        font-size: 1rem; /* Reduce el tamaño del texto en el botón */
-        padding: 8px 18px; /* Reduce el tamaño del botón */
-    }
-}
-
