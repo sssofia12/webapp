@@ -1,0 +1,14 @@
+:root {
+    --color-bg-light: #f0f0f0; /* Fondo general */
+    --color-bg-white: #fff; /* Fondo blanco */
+    --color-border-light: #ddd; /* Borde gris claro */
+    --color-text-dark: #333; /* Texto gris oscuro */
+    --color-text-black: #000; /* Texto negro */
+    --color-bg-hover: #f1f1f1; /* Fondo hover */
+    --color-text-medium: #555; /* Texto gris medio */
+    --color-blue-light: #007bff; /* Azul brillante */
+    --color-blue-dark: #0056b3; /* Azul oscuro */
+    --color-text-subtitle: #454545; /* Texto gris oscuro (subtítulos) */
+    --color-bg-light-gray: #f4f4f4; /* Fondo gris claro */
+    --color-border-black: #000000; /* Borde negro */
+}
