@@ -105,6 +105,22 @@
     .about-image {
         display: none; /* Oculta la imagen */
     }
+
+    /* Estilos responsivos para el video */
+    .video-section {
+        position: relative;
+        padding-top: 56.25%; /* Relación de aspecto 16:9 */
+        overflow: hidden;
+    }
+
+    .video-section video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 /* --- Estilos para pantallas de tabletas en modo paisaje --- */
@@ -130,6 +146,22 @@
 
     .contact-left img {
         display: none; /* Ocultar imagen */
+    }
+
+    /* Estilos responsivos para el video */
+    .video-section {
+        position: relative;
+        padding-top: 56.25%; /* Relación de aspecto 16:9 */
+        overflow: hidden;
+    }
+
+    .video-section video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -219,4 +251,13 @@ header nav #work-link {
     .about-image {
         display: none !important; /* Aseguramos que la imagen se oculte */
     }
+}
+
+/* Imagen de ancho completo */
+.full-width-image img,
+.full-screen-section img,
+.full-screen-section video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que las imágenes y videos no se deformen */
 }

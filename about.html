@@ -1,13 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SNMVISUALS</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <!-- Agregar el favicon desde GitHub -->
-        <link rel="icon" href="https://raw.githubusercontent.com/sssofia12/webapp/refs/heads/master/assets/icons/favicons/favicon.ico" type="image/x-icon">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNMVISUALS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Agregar el favicon desde GitHub -->
+    <link rel="icon" href="https://raw.githubusercontent.com/sssofia12/webapp/refs/heads/master/assets/icons/favicons/favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Estilo general para la imagen */
+        .about-image {
+            width: 100%;   /* La imagen ocupa el 100% del contenedor */
+            height: auto;  /* Mantiene la relación de aspecto de la imagen */
+            max-width: 600px; /* Limita el tamaño máximo de la imagen */
+        }
+
+        /* Contenedor que mantiene el texto y la imagen */
+        .contact-content {
+            display: flex;   /* Usamos flexbox para alinear el texto e imagen */
+            flex-wrap: wrap; /* Permite que los elementos se muevan al siguiente renglón si es necesario */
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Estilo responsivo para el texto */
+        .contact-info {
+            font-size: 1.1rem;  /* Tamaño base para el texto */
+            line-height: 1.6;   /* Altura de línea para mejorar la legibilidad */
+        }
+
+        .contact-info h1 {
+            font-size: 2rem;  /* Tamaño de título */
+        }
+
+        .contact-info p {
+            font-size: 1.1rem; /* Tamaño del párrafo */
+        }
+
+        /* Media Queries para hacer que el texto y la imagen sean responsivos */
+        /* Pantallas medianas (Tablets) */
+        @media (max-width: 1024px) {
+            .contact-info {
+                font-size: 1rem;  /* Reduce el tamaño del texto en pantallas medianas */
+            }
+
+            .contact-info h1 {
+                font-size: 1.8rem;  /* Reduce el tamaño del título en pantallas medianas */
+            }
+
+            .contact-info p {
+                font-size: 1rem; /* Reduce el tamaño del párrafo en pantallas medianas */
+            }
+
+            /* Cambiar la disposición en pantallas medianas (tablets) */
+            .contact-content {
+                flex-direction: column; /* Cambia la dirección de los elementos a columna */
+                align-items: center;    /* Centra los elementos */
+            }
+
+            .contact-left {
+                margin-top: 20px; /* Añade espacio arriba de la imagen cuando está debajo del texto */
+            }
+
+            .contact-left img {
+                max-width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+            }
+        }
+
+        /* Pantallas pequeñas (Móviles) */
+        @media (max-width: 768px) {
+            .contact-info {
+                font-size: 0.9rem;  /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+            }
+
+            .contact-info h1 {
+                font-size: 1.6rem;  /* Reduce aún más el tamaño del título en pantallas pequeñas */
+            }
+
+            .contact-info p {
+                font-size: 0.9rem; /* Reduce el tamaño del párrafo en pantallas pequeñas */
+            }
+
+            /* Cambiar la disposición en pantallas pequeñas */
+            .contact-content {
+                flex-direction: column; /* Cambia la dirección de los elementos a columna */
+                align-items: center;    /* Centra los elementos */
+            }
+
+            .contact-left {
+                margin-top: 20px; /* Añade espacio arriba de la imagen cuando está debajo del texto */
+            }
+
+            .contact-left img {
+                max-width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+            }
+        }
+    </style>
+</head>
 <body>
     <!-- Encabezado -->
     <header>
@@ -31,14 +121,8 @@
 
     <!-- Aquí iría el contenido de la página -->
 
-    <!-- Script para controlar el comportamiento del menú desplegable -->
-    <script src="java script.js/app.js"></script>
-</body>
-</html>
-
-
+    <!-- Información de contacto (texto y datos) -->
     <div class="contact-content">
-        <!-- Información de contacto (texto y datos) -->
         <div class="contact-info">
             <h1>About me</h1>
             <p>Hello! I am Sofía, a final year student of Audiovisual Design and Illustration at UDIT.</p>
@@ -51,7 +135,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
@@ -67,5 +151,8 @@
         </div>
     </footer>
 
+    <!-- Script para controlar el comportamiento del menú desplegable -->
+    <script src="javascript/app.js"></script> <!-- Corregí la ruta del archivo JS -->
 </body>
 </html>
+

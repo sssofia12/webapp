@@ -9,8 +9,6 @@
     <link rel="icon" href="https://raw.githubusercontent.com/sssofia12/webapp/refs/heads/master/assets/icons/favicons/favicon.ico" type="image/x-icon">
 
     <style>
-        /* Aquí se agregan las reglas de diseño responsivo */
-
         /* Estilo general, se adapta al 100% del ancho */
         body {
             margin: 0;
@@ -30,7 +28,25 @@
 
         .video-section video {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Hace que el video cubra todo el espacio */
+        }
+
+        /* Ocultar el video vertical en pantallas grandes */
+        .video-mobile {
+            display: none;
+        }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            /* Mostrar el video vertical y ocultar el video horizontal */
+            .video-desktop {
+                display: none; /* Ocultar el video horizontal en pantallas pequeñas */
+            }
+            .video-mobile {
+                display: block; /* Mostrar el video vertical en pantallas pequeñas */
+                object-fit: cover; /* Ajustar el video vertical para cubrir el contenedor */
+            }
         }
 
         /* Sección de Introducción */
@@ -76,7 +92,8 @@
         }
 
         /* Media Queries para hacerlo responsivo */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            /* En pantallas medianas, ajustamos el diseño */
             .grid-container {
                 grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
             }
@@ -84,54 +101,78 @@
             .intro-container {
                 flex-direction: column; /* Alinear las imágenes y texto en columna */
             }
+
+            .intro-text {
+                padding: 0 20px; /* Añadimos un poco de padding en el texto */
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
+            /* Para pantallas más pequeñas, como tabletas o dispositivos más pequeños */
             .grid-container {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                grid-template-columns: 1fr; /* Una columna en pantallas más pequeñas */
+                margin: 10px; /* Reducir márgenes */
             }
 
             .intro-container {
                 flex-direction: column;
+                margin: 10px;
             }
 
             .intro-image {
                 max-width: 100%;
             }
+
+            .intro-text {
+                font-size: 1.1rem; /* Ajustar el tamaño de la fuente */
+            }
+
+            .video-section {
+                height: auto; /* Ajustar el alto del video */
+            }
+
+            .video-section video {
+                object-fit: contain; /* Asegurarnos de que el video no se recorte */
+            }
         }
 
-        /* --- Estilo para el menú desplegable --- */
-        .dropdown {
-            display: none; /* Ocultamos el dropdown por defecto */
-            position: absolute;
-            top: 100%; /* Lo posicionamos debajo de "Work" */
-            left: 0;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            min-width: 160px; /* Ajustamos el ancho del menú */
-            z-index: 1;
-        }
+        @media (max-width: 480px) {
+            /* Para pantallas muy pequeñas como teléfonos móviles */
+            .grid-container {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                padding: 0 10px;
+            }
 
-        .dropdown a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #333;
-        }
+            .intro-text {
+                font-size: 1rem; /* Ajustar aún más el tamaño de la fuente */
+            }
 
-        .dropdown a:hover {
-            background-color: #f1f1f1;
-        }
+            .intro-container {
+                margin: 10px;
+            }
 
-        /* Estilo al pasar el mouse sobre el enlace "Work" */
-        header nav #work-link:hover {
-            cursor: pointer;
-        }
+            .footer-container {
+                flex-direction: column; /* Cambiar el footer para dispositivos pequeños */
+                text-align: center;
+            }
 
-        /* Estilo al mostrar el menú */
-        .show-dropdown {
-            display: block;
+            .footer-right nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-right nav a {
+                margin-bottom: 10px;
+            }
+
+            .video-section {
+                height: 50vh; /* Ajustar la altura del video en pantallas muy pequeñas */
+            }
+
+            .video-section video {
+                object-fit: contain; /* Para que el video se vea bien sin recortes */
+            }
         }
     </style>
 </head>
@@ -169,9 +210,15 @@
 
     <!-- Sección Video -->
     <section class="video-section">
-        <video autoplay muted loop>
-            <div class="full-width-video"></div>
+        <!-- Video horizontal para pantallas grandes -->
+        <video autoplay muted loop class="video-desktop">
             <source src="assets/images/video introduccion.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Video vertical para pantallas pequeñas -->
+        <video autoplay muted loop class="video-mobile">
+            <source src="assets/images/video movil.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </section>
